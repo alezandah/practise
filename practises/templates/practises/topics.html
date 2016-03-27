@@ -1,0 +1,23 @@
+{% extends "practises/base.html" %}
+
+{% block header %}
+	<h1>Topics</h1>
+{% endblock header %}
+
+{% block content %}
+
+	<ul>
+		{% for topic in topics %}
+			<li>
+				<h3>
+				<a href="{% url 'practises:topic' topic.id %}">{{ topic }}</a>
+				</h3>
+			</li>
+		{% empty %}
+			<li>No topics yet.</li>
+		{% endfor %}
+	</ul>
+
+	<h3><a href="{% url 'practises:new_topic' %}">Add new topic</a></h3>
+
+{% endblock content %}
