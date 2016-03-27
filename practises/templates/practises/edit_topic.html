@@ -1,0 +1,15 @@
+{% extends 'practises/base.html' %}
+
+{% block content %}
+
+	<p><a href="{% url 'practises:topic' topic.id %}">{{ topic }}</a></p>
+
+	<p>Edit topic: </p>
+
+	<form action="{% url 'practises:edit_topic' topic.id %}" method='post'>
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button name="submit">Save changes</button>
+	</form>		
+
+{% endblock content %}

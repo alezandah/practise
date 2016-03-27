@@ -1,0 +1,18 @@
+{% extends "practises/base.html" %}
+
+{% block header %}
+	<div class="jumbotron">
+		<h1>Django Practise</h1>
+	</div>
+{% endblock header %}
+
+{% block content %}
+	<h2>
+		<a href="{% url 'users:register' %}">Register an account</a> to start
+		practising, and also list the topics you want to practise with.
+	</h2>
+	<h2>
+		Whenever you practise, make a topic, followed by an entry in the topic
+		about what you just practised.
+	</h2>
+{% endblock content %}
