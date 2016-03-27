@@ -159,7 +159,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 3b52d4b095f0b15abdf6ad4b8533af9bf1aa9bff
