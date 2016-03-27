@@ -55,6 +55,28 @@ BOOTSTRAP3 = {
 }
 
 
+#Heroku settings
+if os.getcwd() == '/app':
+    import dj_database_url
+    DATABASES = {
+        'default': dj_database_url.config(default='postgres://localhost')
+}
+
+#Honor the 'X-Forwarded-Proto' header for request.is_secure().
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+# Allow all host headers.
+ALLOWED_HOSTS = ['*']
+
+# Static asset configuration
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = 'staticfiles'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+#End of Heroku setting
+
+
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -94,6 +116,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+                
     }
 }
 
@@ -134,15 +157,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.9/howto/static-files/
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
 
-# Extra places for collectstatic to find static files.
-STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'static'),
-)
 
