@@ -55,6 +55,7 @@ BOOTSTRAP3 = {
 }
 
 
+<<<<<<< HEAD
 #Heroku settings
 if os.getcwd() == '/app':
     import dj_database_url
@@ -77,6 +78,8 @@ STATICFILES_DIRS = (
 #End of Heroku setting
 
 
+=======
+>>>>>>> 3b52d4b095f0b15abdf6ad4b8533af9bf1aa9bff
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -116,7 +119,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-                
+
     }
 }
 
@@ -159,4 +162,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3b52d4b095f0b15abdf6ad4b8533af9bf1aa9bff
